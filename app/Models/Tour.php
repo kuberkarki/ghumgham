@@ -21,8 +21,8 @@ class Tour extends Model
 
     public function price():Attribute{
         return Attribute::make(
-            get: fn($value) => $this->price/100,
-            set: fn($value) => $this->price*100
+            get: fn($value) => $value/100,
+            set: fn($value) => $value*100
 
         );
     }

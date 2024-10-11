@@ -13,7 +13,7 @@ class Travel extends Model
     use HasFactory, Sluggable, HasUuids;
     protected $table="travels";
 
-    protected $fillable=['name','slug','description','number_of_days'];
+    protected $fillable=['name','is_public','slug','description','number_of_days'];
 
     public function tours(): HasMany
     {
@@ -39,5 +39,10 @@ class Travel extends Model
     public function getNumberOfNightsAttribute(){
         return $this->number_of_days - 1;
     }
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug';
+    // }
 
 }
